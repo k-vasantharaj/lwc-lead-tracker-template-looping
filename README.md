@@ -40,7 +40,7 @@ It allows users to enter Lead Details (Name, Source, Annual Revenue, Email), add
 
 📂 Clone this repository:
 
-git clone https://github.com/your-username/lwc-lead-tracker-template-looping.git
+git clone (https://github.com/k-vasantharaj/lwc-lead-tracker-template-looping)
 
 
 🚀 Deploy to your Salesforce Org using SFDX or VS Code.
