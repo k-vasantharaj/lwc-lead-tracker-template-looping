@@ -1,0 +1,78 @@
+<template>
+    <lightning-card title="Lead Tracker">
+        <div class="slds-p-around-medium">
+            <!-- Lead Name -->
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-align_absolute-center slds-p-around_small lead">Lead Name</div>
+                </div>
+                <div class="slds-col slds-p-horizontal_medium inputStyle">
+                    <lightning-input class="input-box" type="text" onchange={handleLeadChange} value={newLeadName}></lightning-input>
+                </div>
+            </div>
+
+            <!-- Lead Source -->
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-align_absolute-center slds-p-around_small lead">Lead Source</div>
+                </div>
+                <div class="slds-col slds-p-horizontal_medium inputStyle">
+                    <lightning-input class="input-box" type="text" onchange={handleSourceChange} value={newLeadSource}></lightning-input>
+                </div>
+            </div>
+
+            <!-- Annual Revenue -->
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-align_absolute-center slds-p-around_small lead">Annual Revenue</div>
+                </div>
+                <div class="slds-col slds-p-horizontal_medium inputStyle">
+                    <lightning-input class="input-box" type="number" onchange={handleARChange} value={newAnnualRevenue}></lightning-input>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="slds-grid slds-align_absolute-center">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-align_absolute-center slds-p-around_small lead">Email</div>
+                </div>
+                <div class="slds-col slds-p-horizontal_medium inputStyle">
+                    <lightning-input class="input-box" type="email" onchange={handleEmailChange} value={newEmail}></lightning-input>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="slds-grid">
+                <div class="slds-col slds-align_absolute-center slds-p-around_small">
+                    <lightning-button label="Add" variant="brand" onclick={handleAddClick}></lightning-button>
+                </div>
+                <div class="slds-col slds-align_absolute-center slds-p-around_small">
+                    <lightning-button label="Clear" variant="neutral" onclick={handleClearClick}></lightning-button>
+                </div>
+                <div class="slds-col slds-align_absolute-center slds-p-around_small">
+                    <lightning-button label="Display" variant="success" onclick={handleDisplayClick}></lightning-button>
+                </div>
+            </div>
+
+            <!-- Display Leads -->
+            <template lwc:if={showLeads}>
+                <template lwc:if={isArray}>
+                    <h1 class="slds-text-heading_small slds-align_absolute-center slds-p-around_small">Leads</h1>
+                    <template for:each={leads} for:item="lead" for:index="index">
+                        <div key={index} class="slds-p-left_medium slds-p-around_small slds-m-bottom_small slds-box slds-theme_shade leadArray">
+                            <p>LeadName - {lead.LeadName}</p>
+                            <p>LeadSource - {lead.LeadSource}</p>
+                            <p>AnnualRevenue - {lead.AnnualRevenue}</p>
+                            <p>Email - {lead.Email}</p>
+                        </div>
+                    </template>
+                </template>
+                <template lwc:else>
+                    <div class="slds-align_absolute-center noLeads">
+                        No Leads Added Yet..
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
