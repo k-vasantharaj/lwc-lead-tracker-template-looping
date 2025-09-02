@@ -1,0 +1,27 @@
+.lead {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-box {
+    width: 200px;
+}
+
+.noLeads {
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+
+.leadArray {
+    font-size: large;
+    font-weight: bold;
+    color: #0070d2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.inputStyle {
+    font-size: medium;
+    font-weight: bold;
+}
